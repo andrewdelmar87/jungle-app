@@ -1,17 +1,17 @@
-class Admin::Categories < ApplicationController
+class Admin::CategoriesController < ApplicationController
 
   http_basic_authenticate_with name: ENV["ADMIN_USERNAME"], password: ENV["ADMIN_PASSWORD"]
 
   def index
-    @ = .order(id: :desc).all
+    @categories = Category.order(id: :desc).all
   end
 
   def new
-    @ = .new
+    @category = Category.new
   end
 
   def create
-    @ = .new(_params)
+    @category = Category.new(category_params)
 
     if @category.save
       redirect_to [:admin, :categories], notice: 'Category created!'
@@ -20,11 +20,11 @@ class Admin::Categories < ApplicationController
     end
   end
 
-  def destroy
-    @category = Category.find params[:id]
-    @category.destroy
-    redirect_to [:admin, :categories], notice: 'Category deleted!'
-  end
+  # def destroy
+  #   @category = Category.find params[:id]
+  #   @category.destroy
+  #   redirect_to [:admin, :categories], notice: 'Category deleted!'
+  # end
 
   private
 

@@ -2,7 +2,7 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
-![Home page](pics/admin-product-view.png "Home page") 
+![Home page](pics/home-page.png "Home page") 
 ![Admin product view](pics/admin-product-view.png "Admin product view")
 ![Cart](pics/cart.png "Cart")
 ![Stripe API](pics/stripe-api.png "Stripe API")
